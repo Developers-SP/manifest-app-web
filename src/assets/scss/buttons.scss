@@ -1,0 +1,38 @@
+.button-hamburguer {
+  width: 35px;
+  height: 40px;
+  background-color: transparent;
+
+  &.active {
+    .trace:nth-child(1) {
+      transform: rotate(-45deg) translate(-10px, 7px);
+    }
+
+    .trace:nth-child(2) {
+      opacity: 0;
+    }
+
+    .trace:nth-child(3) {
+      transform: rotate(45deg) translate(-8px, -6px);
+    }
+  }
+
+  .trace {
+    background-color: map-get($colors, white);
+    border-radius: 5px;
+    height: 6px;
+    margin: 5px 0;
+    transition: 0.4s;
+    width: 100%;
+  }
+}
+
+.button-outline {
+  background-color: transparent;
+  border: solid 5px currentColor;
+  border-radius: 90%;
+  font-size: 100px;
+  height: 130px;
+  width: 130px;
+  color: map-get($colors, primary);
+}

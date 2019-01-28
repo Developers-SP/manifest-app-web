@@ -1,0 +1,17 @@
+@import 'variables';
+
+.header {
+  align-items: center;
+  background-color: map-get($colors, primary);
+  color: map-get($colors, white);
+  display: flex;
+  height: map-get($sizes, header);
+  padding: 0 20px;
+  width: 100vw;
+
+  &__title {
+    font-size: map-get($fonts, md);
+    margin-left: 15px;
+  }
+
+}
