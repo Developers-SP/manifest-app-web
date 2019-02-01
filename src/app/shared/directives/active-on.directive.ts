@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, Renderer, OnInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Renderer2, Input, OnInit, OnDestroy } from '@angular/core';
 
 @Directive({
   selector: '[appActiveOn]'
@@ -10,7 +10,7 @@ export class ActiveOnDirective implements OnInit, OnDestroy {
 
   constructor(
     private element: ElementRef,
-    private renderer: Renderer
+    private renderer: Renderer2
   ) { }
 
   public ngOnInit(): void {
