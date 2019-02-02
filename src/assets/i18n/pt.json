@@ -1,4 +1,7 @@
 {
   "Manifesto": "Manifesto",
-  "Menu": "menu"
+  "menu": "menu",
+  "Equipo": "Equipo",
+  "Nome": "Nome",
+  "Tipo": "Tipo"
 }
