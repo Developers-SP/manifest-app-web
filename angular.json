@@ -14,6 +14,68 @@
         }
       },
       "architect": {
+        "build-mocked": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/manifest-app-web",
+            "index": "src/index.html",
+            "main": "src/main.mock.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.mock.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/images/",
+                "output": "./images/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/i18n/",
+                "output": "./i18n/"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src/assets/",
+                "output": "./"
+              }
+            ],
+            "styles": [
+              "src/assets/scss/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss"
+              ]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
