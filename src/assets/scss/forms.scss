@@ -1,0 +1,85 @@
+.select {
+  margin: 0 24px;
+  position: relative;
+  &:after {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #9bc6f7;
+    content: "";
+    height: 0;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 0;
+  }
+
+  &__bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    &:after,
+    &:before {
+      background-color: map-get($colors, light);
+      bottom: 1px;
+      content: "";
+      height: 2px;
+      position: absolute;
+      transition: 0.2s ease all;
+      width: 0;
+    }
+
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%;
+    }
+  }
+
+  &__label {
+    color: #9bc6f7;
+    font-size: 18px;
+    font-weight: normal;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+
+  &__text {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 3px solid #9bc6f7;
+    color: map-get($colors, light);
+    font-family: inherit;
+    padding: 10px 10px 10px 0;
+    position: relative;
+    font-size: 18px;
+    width: 100%;
+
+    &:focus,
+    &:valid {
+      ~ .select__label {
+        color: map-get($colors, light);
+        font-size: 14px;
+        top: -20px;
+        transition: 0.2s ease all;
+      }
+    }
+
+    &:focus {
+      border-bottom: 3px solid #9bc6f7;
+      outline: none;
+
+      ~ .select__bar:before,
+      ~ .select__bar:after {
+        width: 50%;
+      }
+    }
+  }
+}

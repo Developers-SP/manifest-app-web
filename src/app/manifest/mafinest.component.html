@@ -1,10 +1,10 @@
-<app-manifest-header></app-manifest-header>
-<main class="content">
+<header class="header" compManifestHeader></header>
+<div class="content">
 
-  <section class="card card--flying">
-    <header>
-      <h4>1</h4>
-      <p>
+  <section class="card-take-off card-take-off--flying">
+    <header class="card-take-off--flying__header">
+      <h4 class="card-take-off__id">1</h4>
+      <p class="card-take-off__name">
         <b>Romeu</b>
         <span>Nalim</span>
       </p>
@@ -13,58 +13,22 @@
 
     </svg>
   </section>
-  <section class="card card--take-off">
-    <header>
-      <h4>2</h4>
-      <p>
+  <section class="card-take-off card-take-off--default">
+    <header class="card-take-off--default__header">
+      <h4 class="card-take-off__id">2</h4>
+      <p class="card-take-off__name">
         <b>Romeu</b>
         <span>Nalim</span>
       </p>
-      <b>04:05</b>
+      <b class="card-take-off__time">04:05</b>
     </header>
     <div class="box">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th class="text-start" translate>Nome</th>
-            <th translate>Equipo</th>
-            <th translate>Tipo</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="text-start">Marcos Jr</td>
-            <td>190</td>
-            <td>SOLO</td>
-            <td class="text-end">
-              <button>X</button>
-              <button>-></button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td class="text-start">Marcos Jr</td>
-            <td>190</td>
-            <td>SOLO</td>
-            <td class="text-end">
-              <button>X</button>
-              <button>-></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <table compTableManifest></table>
     </div>
   </section>
-  <section class="card card--take-off">
-
+  <section class="card-take-off card-take-off--create">
+    <button (click)="addTakeOff($event)" [ngClass]="{ hidden: newTakeOff }" class="card-take-off--create__button outline line-lg rounded-lg blue">+</button>
+    <form compNewTakeOff [ngClass]="{ active: newTakeOff }" (submit)="addTakeOff($event)"></form>
   </section>
 
-  <button class="button-outline">
-     +
-  </button>
-
-</main>
+</div>

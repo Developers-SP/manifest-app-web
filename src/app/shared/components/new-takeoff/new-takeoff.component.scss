@@ -1,0 +1,27 @@
+:host {
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #358df1;
+  position: absolute;
+  visibility: hidden;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  height: 0%;
+  width: 0%;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+
+  &.active {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+
+  button {
+    margin: 15px 24px;
+    height: 45px;
+    width: calc(100% - 48px);
+    &.outline {
+      color: white;
+    }
+  }
+}

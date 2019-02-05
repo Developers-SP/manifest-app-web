@@ -1,0 +1,116 @@
+.card-take-off {
+  position: relative;
+  height: 640px;
+  margin-top: 20px;
+  margin-bottom: -23.2%;
+  transform: rotate(90deg) translateY(#{calc(-100vh + 25%)});
+  transform-origin: top left;
+  width: 360px;
+
+  &--create {
+    &__id {
+      color: white;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 30px;
+      margin: 55px 0;
+      text-align: center;
+
+      &::before {
+        content: "#";
+        font-weight: 100;
+      }
+    }
+
+    &__button {
+      transform: translateX(-50%) translateY(-50%);
+      position: absolute;
+      font-size: 100px;
+      height: 130px;
+      width: 130px;
+      left: 50%;
+      top: 50%;
+
+      &.hidden {
+        background-color: #358df1;
+        color: transparent;
+        border-radius: 0;
+        height: 640px;
+        width: 360px;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &--flying {
+    background-color: #358df1;
+    color: white;
+
+    &__header {
+      transform: translateX(-50%) translateY(-50%);
+      position: absolute;
+      left: 50%;
+      top: 25%;
+      .card-take-off__id {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+        text-align: center;
+
+        &::before {
+          content: "#";
+          font-weight: 100;
+        }
+      }
+
+      .card-take-off__name {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        margin-top: 15px;
+        text-align: center;
+      }
+    }
+  }
+
+  &--default {
+    &__header {
+      background-color: #358df1;
+      box-shadow: black 0px 5px 10px -5px;
+      color: map-get($colors, light);
+      display: flex;
+      padding: 15px 20px;
+      position: relative;
+      z-index: 1;
+
+      .card-take-off__id {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-right: 5%;
+
+        &::before {
+          content: "#";
+          font-weight: 100;
+        }
+      }
+
+      .card-take-off__name {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+      }
+
+      .card-take-off__time  {
+        line-height: 30px;
+        font-size: 17px;
+      }
+    }
+    .box {
+      border: solid 0.5px #999;
+      border-top: none;
+      margin-top: 53px;
+      height: 526px;
+    }
+  }
+}

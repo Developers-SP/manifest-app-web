@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'body[app]',
   template: '<router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {

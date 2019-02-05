@@ -1,0 +1,21 @@
+<thead>
+  <tr>
+    <th>#</th>
+    <th class="text-start" translate>Nome</th>
+    <th translate>Equipo</th>
+    <th translate>Tipo</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let vacancy of vacancies">
+    <td [title]="vacancy.id">{{vacancy.id}}</td>
+    <td [title]="vacancy.name" class="text-start">{{vacancy.name}}</td>
+    <td [title]="vacancy.equipament.name">{{vacancy.equipament.name}}</td>
+    <td [title]="vacancy.modality.name">{{vacancy.modality.name}}</td>
+    <td class="text-end">
+      <button>X</button>
+      <button>-></button>
+    </td>
+  </tr>
+</tbody>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-manifest-header',
+  selector: 'header[compManifestHeader]',
   templateUrl: './manifest-header.component.html',
   styleUrls: ['./manifest-header.component.scss']
 })

@@ -1,38 +1,87 @@
-.button-hamburguer {
-  width: 35px;
-  height: 40px;
-  background-color: transparent;
+button {
+  &.hamburguer {
+    width: 35px;
+    height: 40px;
+    background-color: transparent;
 
-  &.active {
-    .trace:nth-child(1) {
-      transform: rotate(-45deg) translate(-10px, 7px);
+    &.active {
+      .trace:nth-child(1) {
+        transform: rotate(-45deg) translate(-10px, 7px);
+      }
+
+      .trace:nth-child(2) {
+        opacity: 0;
+      }
+
+      .trace:nth-child(3) {
+        transform: rotate(45deg) translate(-8px, -6px);
+      }
     }
 
-    .trace:nth-child(2) {
-      opacity: 0;
-    }
-
-    .trace:nth-child(3) {
-      transform: rotate(45deg) translate(-8px, -6px);
+    .trace {
+      background-color: map-get($colors, light);
+      border-radius: 5px;
+      height: 6px;
+      margin: 5px 0;
+      transition: 0.4s;
+      width: 100%;
     }
   }
 
-  .trace {
-    background-color: map-get($colors, white);
-    border-radius: 5px;
-    height: 6px;
-    margin: 5px 0;
-    transition: 0.4s;
-    width: 100%;
-  }
-}
 
-.button-outline {
-  background-color: transparent;
-  border: solid 5px currentColor;
-  border-radius: 90%;
-  font-size: 100px;
-  height: 130px;
-  width: 130px;
-  color: map-get($colors, primary);
+  &.primary {
+    &.light {
+      background-color: map-get($colors, light);
+      color: map-get($colors, primary);
+    }
+    &.blue {
+      background-color: map-get($colors, primary);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: solid currentColor;
+    visibility: visible;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+
+    &.line-xs {
+      border-width: 1px;
+    }
+
+    &.line-sm {
+      border-width: 2px;
+    }
+
+    &.line-md {
+      border-width: 3px;
+    }
+
+    &.line-lg {
+      border-width: 5px;
+    }
+
+    &.blue {
+      color: map-get($colors, primary);
+    }
+
+    &.white {
+      color: map-get($colors, light);
+    }
+  }
+
+  &.rounded {
+    &-xl {
+      border-radius: 5px;
+    }
+    &-sm {
+      border-radius: 10px;
+    }
+    &-md {
+      border-radius: 30px;
+    }
+    &-lg {
+      border-radius: 100%;
+    }
+  }
 }

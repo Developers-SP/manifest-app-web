@@ -1,18 +1,26 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { ActiveOnDirective } from './directives/active-on.directive';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
+import { AddClassOnDirective } from './directives/add-class-on/add-class-on.directive';
+import { TableManifestComponent } from './components/table-manifest/table-manifest.component';
+import { NewTakeOffComponent } from './components/new-takeoff/new-takeoff.component';
 @NgModule({
   declarations: [
-    ActiveOnDirective
+    NewTakeOffComponent,
+    AddClassOnDirective,
+    TableManifestComponent,
   ],
   exports: [
-    ActiveOnDirective
+    NewTakeOffComponent,
+    AddClassOnDirective,
+    TableManifestComponent,
   ],
   imports: [
+    FormsModule,
     CommonModule,
-    TranslateModule,
+    TranslateModule
   ]
 })
 export class SharedModule {

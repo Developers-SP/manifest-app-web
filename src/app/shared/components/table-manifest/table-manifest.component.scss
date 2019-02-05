@@ -1,0 +1,49 @@
+:host {
+  width: calc(100% + 2px);
+  position: relative;
+  top: -53px;
+  left: -1px;
+  thead {
+    background-color: #358df1;
+    font-weight: 500;
+    color: white;
+    th {
+      padding-top: 20px;
+    }
+  }
+  tbody {
+    height: 100%;
+    tr {
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 90%;
+        background-color: #999;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(15px);
+      }
+    }
+  }
+  th,
+  td {
+    padding: 15px 5px;
+    text-align: center;
+
+    &.text-start {
+      text-align: start;
+    }
+    &.text-end {
+      text-align: end;
+    }
+
+    &:first-child {
+      text-align: start;
+      padding-left: 20px;
+    }
+    &:last-child {
+      padding-right: 20px;
+    }
+  }
+}
